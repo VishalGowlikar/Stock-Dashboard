@@ -6,7 +6,7 @@ export interface Quote {
   }
   
   export const fetchGlobalQuote = async (symbol: string): Promise<Quote> => {
-    const API_KEY = 'YOUR_API_KEY';
+    const API_KEY = 'import.meta.env.VITE_API_KEY;';
     const url = `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${symbol}&apikey=${API_KEY}`;
     const res = await fetch(url);
     const data = await res.json();
